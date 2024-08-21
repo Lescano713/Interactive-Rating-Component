@@ -2,15 +2,6 @@ const options = document.querySelectorAll('input[type="radio"]');
 const submitButton = document.querySelector('button[type="submit"]');
 
 
-capture()
-function capture(){
-    options.forEach(option =>{
-        option.addEventListener('click', e => {
-            const value = e.target.value;
-            raitingState(value);
-        })
-    })
-}
 
 function raitingState(value){
     const state = document.querySelector('#state');
@@ -19,5 +10,11 @@ function raitingState(value){
 
 submitButton.addEventListener('click', e =>{
     e.preventDefault()
-    document.body.classList.add('hide')
+    const optionSelected = Array.from(options).find(option => option.checked);
+    if (!optionSelected) {
+        alert("Please choose an option");
+    } else {
+        raitingState(optionSelected.value)
+        document.body.classList.add('hide');
+    }
 })
