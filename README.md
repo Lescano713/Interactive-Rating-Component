@@ -53,25 +53,47 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+<p>I learned about using pseudo-selectors to apply styles and the importance of the `name` and `value` attributes in radio buttons.</p>
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<input type="radio" id="option1" name="option" value="1">
+<label for="option1">1</label>
+
+<input type="radio" id="option2" name="option" value="2">
+<label for="option2">2</label>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+input[type="radio"]{
+    display: none;
 }
+input[type="radio"]:checked + label{
+    background-color: var(--Orange);
+    color: var(--DarkBlue);
+}
+
 ```
+<p>I implemented a validation mechanism that requires the user to choose an option before proceeding. If no option is selected, an alert message is shown.</p>
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+if (!optionSelected) {
+        alert("Please choose an option");
+    } else {
+        raitingState(optionSelected.value)
+        document.body.classList.add('hide');
+    }
 ```
 
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+<b>Advanced CSS Techniques:</b>
+<p>I want to explore more advanced pseudo-selectors and combinators. I also aim to learn about CSS Grid and Flexbox to handle more complex layouts.</p>
+
+<b>JavaScript Enhancements:</b>
+<p>I plan to practice handling different user inputs and validation scenarios. I want to refine my understanding of JavaScript events and form handling.</p>
+
+<b>Accessibility Improvements:</b>
+<p>I need to ensure that my forms and interactive elements are accessible to all users, including those using assistive technologies.</p>
+
+<b>Responsive Design:</b>
+<p>I’ll work on making my designs responsive to different screen sizes and devices.</p>
